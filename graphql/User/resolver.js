@@ -10,12 +10,14 @@ let users = {
 		name: "Goldman Sach",
 	},
 };
-const Query = {
-	users: () => {
-		return Object.values(users);
-	},
-	user: (_, { id }) => {
-		return users[id];
-	},
-};
-module.exports = { Query };
+
+exports.resolver = {
+	Query: {
+		users: () => {
+			return Object.values(users);
+		},
+		user: (_, { id }) => {
+			return users[id];
+		},
+	}
+}
