@@ -27,4 +27,14 @@ exports.resolver = {
 			return purchase.filter((purchase) => purchase.user_id == user_id)
 		},
 	},
+	Mutation: {
+		addPurchase: async (_, { id, user_id, product_name }) => {
+			purchase.push({
+				id: id,
+				user_id: user_id,
+				product_name: product_name,
+			})
+			return true
+		},
+	},
 }

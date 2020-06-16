@@ -6,3 +6,11 @@ type Purchase {
 	user_id: ID!
 	product_name: String!
 }
+type Mutation {
+	addPurchase(userInput: PurchaseData!): Boolean!
+}
+input PurchaseData {
+	id: Int
+	user_id: ID!
+	product_name: String!
+}
